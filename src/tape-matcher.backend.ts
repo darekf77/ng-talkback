@@ -1,10 +1,10 @@
-import ContentEncoding from "./utils/content-encoding"
-import MediaType from "./utils/media-type"
-import {Options} from "./options"
-import Tape from "./tape"
-import {Req} from "./types"
+import ContentEncoding from './utils/content-encoding.backend';
+import MediaType from './utils/media-type.backend';
+import {Options} from './options.backend';
+import Tape from './tape.backend';
+import {Req} from './types.backend';
 
-const isEqual = require("lodash/isEqual")
+const isEqual = require('lodash/isEqual')
 
 export default class TapeMatcher {
   private readonly tape: Tape
@@ -37,6 +37,7 @@ export default class TapeMatcher {
   private isSameBody(req: Req, otherReq: Req) {
     const mediaType = new MediaType(req)
     const contentEncoding = new ContentEncoding(req)
+
 
     let sameBody: boolean
     if (contentEncoding.isUncompressed() && mediaType.isJSON() && req.body.length > 0 && otherReq.body.length > 0) {

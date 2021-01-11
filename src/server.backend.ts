@@ -1,12 +1,12 @@
-import RequestHandler from "./request-handler"
-import Summary from "./summary"
-import TapeStore from "./tape-store"
+import RequestHandler from './request-handler.backend';
+import Summary from './summary.backend';
+import TapeStore from './tape-store.backend';
 
-import * as http from "http"
-import * as https from "https"
-import * as fs from "fs"
-import {Options} from "./options"
-import {Req} from "./types"
+import * as http from 'http';
+import * as https from 'https';
+import * as fs from 'fs';
+import {Options} from './options.backend';
+import {Req} from './types.backend';
 
 export default class TalkbackServer {
   private readonly options: Options

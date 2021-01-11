@@ -1,17 +1,27 @@
-import TalkbackFactory from "./talkback-factory"
-import Options, {DefaultOptions, FallbackMode, RecordMode} from "./options"
+export type Dummy = 'a';
+let a = 2;
+a++;
+//#region @backend
+export * from './options.backend';
+export * from './tape.backend';
 
-const talkback = (options: Partial<Options>) => {
+
+import TalkbackFactory from './talkback-factory.backend'
+import Options, { DefaultOptions, FallbackMode, RecordMode } from './options.backend'
+
+
+const talkbackFn = (options: Partial<Options>) => {
   return TalkbackFactory.server(options)
 }
 
-talkback.Options = {
+talkbackFn.Options = {
   Default: DefaultOptions,
   FallbackMode,
   RecordMode
 }
 
-talkback.requestHandler = (options: Partial<Options>) => TalkbackFactory.requestHandler(options)
+talkbackFn.requestHandler = (options: Partial<Options>) => TalkbackFactory.requestHandler(options)
 
-export default talkback
-module.exports = talkback
+export const talkback = talkbackFn;
+export default talkbackFn;
+//#endregion

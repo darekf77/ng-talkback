@@ -1,13 +1,13 @@
-import {Options} from "./options"
+import {Options} from './options.backend';
 
-const fs = require("fs")
-const path = require("path")
-const JSON5 = require("json5")
-const mkdirp = require("mkdirp")
+const fs = require('fs')
+const path = require('path')
+const JSON5 = require('json5')
+const mkdirp = require('mkdirp')
 
-import Tape from "./tape"
-import TapeMatcher from "./tape-matcher"
-import TapeRenderer from "./tape-renderer"
+import Tape from './tape.backend';
+import TapeMatcher from './tape-matcher.backend';
+import TapeRenderer from './tape-renderer.backend';
 
 export default class TapeStore {
   private readonly path: string

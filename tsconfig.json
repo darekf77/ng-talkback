@@ -1,15 +1,9 @@
 {
+  "extends": "./tsconfig.isomorphic.json",
   "compilerOptions": {
-    "lib": [ "es5"],
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "Node",
-    "outDir": "./dist",
-    "declaration": true,
-    "inlineSourceMap": true,
-    "esModuleInterop": true
+    "rootDir": "./src"
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }

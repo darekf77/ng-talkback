@@ -1,7 +1,7 @@
-import Options from "./options"
-import TapeStore from "./tape-store"
-import TalkbackServer from "./server"
-import RequestHandler from "./request-handler"
+import Options from './options.backend';
+import TapeStore from './tape-store.backend';
+import TalkbackServer from './server.backend';
+import RequestHandler from './request-handler.backend';
 
 export default class TalkbackFactory {
   static server(options: Partial<Options>) {

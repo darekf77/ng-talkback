@@ -1,7 +1,7 @@
-import {ReqRes} from "../types"
+import {ReqRes} from '../types.backend';
 
-const zlib = require("zlib")
-import Headers from "./headers"
+const zlib = require('zlib')
+import Headers from './headers.backend';
 
 const ALGORITHMS = {
   gzip: {compress: zlib.gzipSync, uncompress: zlib.gunzipSync},

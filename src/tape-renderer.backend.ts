@@ -1,11 +1,11 @@
-import Headers from "./utils/headers"
-import MediaType from "./utils/media-type"
-import Tape from "./tape"
-import ContentEncoding from "./utils/content-encoding"
-import {Options} from "./options"
-import {ReqRes} from "./types"
+import Headers from './utils/headers.backend';
+import MediaType from './utils/media-type.backend';
+import Tape from './tape.backend';
+import ContentEncoding from './utils/content-encoding.backend';
+import { Options } from './options.backend';
+import { ReqRes } from './types.backend';
 
-const bufferShim = require("buffer-shims")
+const bufferShim = require('buffer-shims')
 
 export default class TapeRenderer {
   private tape: Tape
@@ -15,13 +15,14 @@ export default class TapeRenderer {
   }
 
   static async fromStore(raw: any, options: Options) {
-    const req = {...raw.req}
+    // console.log('raw', raw)
+    const req = { ...raw.req }
 
     req.body = await this.prepareBody(raw, req, req.body, "req")
 
     const tape = new Tape(req, options)
-    tape.meta = {...raw.meta}
-    const baseRes = {...raw.res}
+    tape.meta = { ...raw.meta }
+    const baseRes = { ...raw.res }
     const resBody = await this.prepareBody(tape, baseRes, baseRes.body, "res")
 
     tape.res = {
@@ -81,6 +82,7 @@ export default class TapeRenderer {
     const mediaType = new MediaType(reqResObj)
     const contentEncoding = new ContentEncoding(reqResObj)
     const bodyLength = reqResObj.body.length
+    // console.log('bodyLength', bodyLength)
 
     const isUncompressed = contentEncoding.isUncompressed()
     const contentEncodingSupported = isUncompressed || contentEncoding.supportedAlgorithm()

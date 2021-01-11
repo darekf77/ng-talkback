@@ -1,7 +1,8 @@
-import {ReqRes} from "../types"
-import Headers from "./headers"
+import * as _ from 'lodash';
+import { ReqRes } from '../types.backend';
+import Headers from './headers.backend';
 
-const contentTypeParser = require("content-type")
+const contentTypeParser = require('content-type')
 
 const equals = (to: string) => (contentType: string) => to == contentType
 
@@ -37,15 +38,21 @@ export default class MediaType {
 
   isJSON() {
     const contentType = this.contentType()
+
     if (!contentType) {
       return false
     }
 
-    return jsonTypes.some(comparator => comparator(contentType))
+    const result = jsonTypes.some(comparator => comparator('application/json'))
+    console.log('isJSON', result)
+    return result;
   }
 
   contentType() {
-    const contentTypeHeader = Headers.read(this.headers(), "content-type")
+
+    const contentTypeHeader = Headers.read(this.headers(), "content-type");
+    // console.log('this.headers()', this.headers())
+    // contentType
     if (!contentTypeHeader) {
       return null
     }
@@ -54,6 +61,8 @@ export default class MediaType {
   }
 
   headers() {
-    return this.htmlReqRes.headers
+    return _.merge(this.htmlReqRes.headers, {
+      'content-type': 'application/json'
+    })
   }
 }

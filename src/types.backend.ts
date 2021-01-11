@@ -1,6 +1,6 @@
-import {FallbackMode, Options, RecordMode} from "./options"
-import TalkbackServer from "./server"
-import RequestHandler from "./request-handler"
+import {FallbackMode, Options, RecordMode} from './options.backend';
+import TalkbackServer from './server.backend';
+import RequestHandler from './request-handler.backend';
 
 export {}
 

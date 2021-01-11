@@ -1,0 +1,48 @@
+{
+  "resources": [],
+  "type": "isomorphic-lib",
+  "version": "v2",
+  "overrided": {
+    "linkedFolders": [],
+    "ignoreDepsPattern": [
+      "*"
+    ],
+    "includeAsDev": [],
+    "includeOnly": [],
+    "dependencies": {
+      "ts-node": "^9.1.1",
+      "typescript": "^4.1.3",
+      "buffer-shims": "^1.0.0",
+      "content-type": "^1.0.4",
+      "json5": "^2.1.1",
+      "lodash": "^4.17.20",
+      "mkdirp": "^1.0.3",
+      "node-fetch": "^2.6.1",
+      "uuid": "^8.3.2"
+    }
+  },
+  "linkedProjects": [],
+  "libReleaseOptions": {
+    "nodts": false,
+    "obscure": false,
+    "ugly": false
+  },
+  "scripts": {
+    "build": "node tools/build.js",
+    "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
+    "start": "node examples/server/start.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha -r mocha-setup.js --extensions ts,js \"test/**/*.spec.{ts,js}\"",
+    "ts-check": "tsc --noEmit"
+  },
+  "description": "A node.js HTTP proxy that records and playbacks requests",
+  "license": "MIT",
+  "author": "Ignacio Piantanida",
+  "main": "index.js",
+  "keywords": [
+    "http-proxy",
+    "record",
+    "vcr",
+    "playback"
+  ],
+  "private": false
+}

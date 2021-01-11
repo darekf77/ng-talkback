@@ -1,13 +1,13 @@
-import MediaType from "./utils/media-type"
-import TapeRenderer from "./tape-renderer"
-import ContentEncoding from "./utils/content-encoding"
-import {Options} from "./options"
-import {Metadata, Req, Res} from "./types"
+import MediaType from './utils/media-type.backend';
+import TapeRenderer from './tape-renderer.backend';
+import ContentEncoding from './utils/content-encoding.backend';
+import { Options } from './options.backend';
+import { Metadata, Req, Res } from './types.backend';
 
-const URL = require("url")
-const querystring = require("querystring")
+const URL = require('url')
+const querystring = require('querystring')
 
-export default class Tape {
+export class Tape {
   req: Req
   res?: Res
   options: Options
@@ -19,7 +19,7 @@ export default class Tape {
   used: boolean = false
 
   constructor(req: Req, options: Options) {
-    this.req = {...req}
+    this.req = { ...req }
     this.options = options
 
     // This needs to happen before we erase headers since we could lose information
@@ -42,7 +42,7 @@ export default class Tape {
   }
 
   cleanupHeaders() {
-    const newHeaders = {...this.req.headers}
+    const newHeaders = { ...this.req.headers }
     this.options.ignoreHeaders.forEach(h => delete newHeaders[h])
     this.req = {
       ...this.req,
@@ -60,7 +60,7 @@ export default class Tape {
       return
     }
 
-    const query = {...url.query}
+    const query = { ...url.query }
     this.queryParamsToIgnore.forEach(q => delete query[q])
 
     const newQuery = querystring.stringify(query)
@@ -88,3 +88,5 @@ export default class Tape {
     return Tape.fromStore(raw, this.options)
   }
 }
+
+export default Tape;

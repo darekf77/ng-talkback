@@ -1,6 +1,6 @@
-import Logger from "./logger"
-import Tape from "./tape"
-import {Req, MatchingContext} from "./types"
+import Logger from './logger.backend';
+import Tape from './tape.backend';
+import {Req, MatchingContext} from './types.backend';
 
 export const RecordMode = {
   NEW: "NEW", // If no tape matches the request, proxy it and save the response to a tape

@@ -1,5 +1,5 @@
-import Tape from "./tape"
-import {Options} from "./options"
+import Tape from './tape.backend';
+import {Options} from './options.backend';
 
 export default class Summary {
   private tapes: Tape[]

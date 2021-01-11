@@ -1,6 +1,6 @@
-import OptionsFactory, {Options} from "../options"
-import {Req} from "../types"
-import Tape from "../tape"
+import OptionsFactory, {Options} from '../options.backend';
+import {Req} from '../types.backend';
+import Tape from '../tape.backend';
 
 export default class Latency {
   private options

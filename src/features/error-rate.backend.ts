@@ -1,6 +1,6 @@
-import OptionsFactory, {Options} from "../options"
-import Tape from "../tape"
-import {Req, Res} from "../types"
+import OptionsFactory, {Options} from '../options.backend';
+import Tape from '../tape.backend';
+import {Req, Res} from '../types.backend';
 
 export default class ErrorRate {
   private options: Options
