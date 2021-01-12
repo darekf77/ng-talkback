@@ -1,7 +1,7 @@
 import TapeStore from './tape-store.backend';
 import { v4 as uuidv4 } from 'uuid';
 
-const fetch = require('node-fetch')
+import axios, { AxiosResponse } from 'axios';
 
 import Tape from './tape.backend';
 import OptionsFactory, { RecordMode, FallbackMode, Options } from './options.backend';
@@ -72,10 +72,7 @@ export default class RequestHandler {
       }
     }
 
-    resObj = responseTape.res
-
-    console.log('resOBj', resObj)
-    console.log('body', resObj.body.toString())
+    resObj = responseTape.res;
 
     if (this.options.responseDecorator) {
       const clonedTape = await responseTape.clone()
@@ -134,12 +131,17 @@ export default class RequestHandler {
       fetchBody = null
     }
 
-    const fRes = await fetch(host + url, { method, headers, body: fetchBody, compress: false, redirect: "manual" })
-    const buff = await fRes.buffer()
-    return {
+    const fRes = await axios({
+      url: (host + url),
+      method,
+      data: body,
+      responseType: 'arraybuffer'
+    });
+    const res = {
       status: fRes.status,
-      headers: fRes.headers.raw(),
-      body: buff
-    } as HttpResponse
+      headers: fRes.headers,
+      body: fRes.data
+    } as HttpResponse;
+    return res;
   }
 }

@@ -37,22 +37,16 @@ export default class MediaType {
   }
 
   isJSON() {
-    const contentType = this.contentType()
-
+    const contentType = this.contentType();
     if (!contentType) {
       return false
     }
-
-    const result = jsonTypes.some(comparator => comparator('application/json'))
-    console.log('isJSON', result)
+    const result = jsonTypes.some(comparator => comparator('application/json'));
     return result;
   }
 
   contentType() {
-
     const contentTypeHeader = Headers.read(this.headers(), "content-type");
-    // console.log('this.headers()', this.headers())
-    // contentType
     if (!contentTypeHeader) {
       return null
     }

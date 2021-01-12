@@ -4,6 +4,7 @@ import Tape from './tape.backend';
 import ContentEncoding from './utils/content-encoding.backend';
 import { Options } from './options.backend';
 import { ReqRes } from './types.backend';
+import * as _ from 'lodash';
 
 const bufferShim = require('buffer-shims')
 
@@ -15,7 +16,7 @@ export default class TapeRenderer {
   }
 
   static async fromStore(raw: any, options: Options) {
-    // console.log('raw', raw)
+
     const req = { ...raw.req }
 
     req.body = await this.prepareBody(raw, req, req.body, "req")
@@ -82,7 +83,7 @@ export default class TapeRenderer {
     const mediaType = new MediaType(reqResObj)
     const contentEncoding = new ContentEncoding(reqResObj)
     const bodyLength = reqResObj.body.length
-    // console.log('bodyLength', bodyLength)
+
 
     const isUncompressed = contentEncoding.isUncompressed()
     const contentEncodingSupported = isUncompressed || contentEncoding.supportedAlgorithm()
@@ -100,9 +101,14 @@ export default class TapeRenderer {
       const rawBody = body.toString("utf8")
 
       if (mediaType.isJSON()) {
-        return JSON.parse(rawBody)
+        try { // TODO handle this better in future not based on mediaType.isJSON
+          const parsed = JSON.parse(rawBody);
+          return parsed;
+        } catch (error) {
+          return rawBody;
+        }
       } else {
-        return rawBody
+        return rawBody;
       }
     } else {
       return reqResObj.body.toString("base64")
