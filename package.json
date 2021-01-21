@@ -44,7 +44,7 @@
     "private": false
   },
   "name": "ng-talkback",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "main": "index.js",
   "license": "MIT",
   "description": "A node.js HTTP proxy that records and playbacks requests",
