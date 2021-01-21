@@ -130,13 +130,22 @@ export default class RequestHandler {
     if (method === "GET" || method === "HEAD") {
       fetchBody = null
     }
-
-    const fRes = await axios({
-      url: (host + url),
-      method,
-      data: body,
-      responseType: 'arraybuffer'
-    });
+    var fRes;
+    if (url.endsWith('favicon.ico')) {
+      console.log(`[ng-talkback] ignoring request for favicon.ico`)
+      return {
+        status: 200,
+        headers: {},
+        body: new Buffer('')
+      } as HttpResponse;
+    } else {
+      fRes = await axios({
+        url: (host + url),
+        method,
+        data: body,
+        responseType: 'arraybuffer',
+      });
+    }
     const res = {
       status: fRes.status,
       headers: fRes.headers,
