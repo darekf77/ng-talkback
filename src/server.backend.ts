@@ -25,6 +25,7 @@ export default class TalkbackServer {
   }
 
   handleRequest(rawReq: http.IncomingMessage, res: http.ServerResponse) {
+    // console.log(`rawReq: ${rawReq.url}`)
     let reqBody = [] as Uint8Array[]
     rawReq.on("data", (chunk) => {
       reqBody.push(chunk)

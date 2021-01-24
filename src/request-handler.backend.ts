@@ -26,6 +26,7 @@ export default class RequestHandler {
     const matchingContext: MatchingContext = {
       id: uuidv4()
     }
+
     const recordMode = typeof (this.options.record) === "string" ? this.options.record : this.options.record(req)
 
     OptionsFactory.validateRecord(recordMode)
@@ -118,39 +119,47 @@ export default class RequestHandler {
   }
 
   private async makeRealRequest(req: HttpRequest) {
-    let fetchBody: Buffer | null
+    // let fetchBody: Buffer | null
     let { method, url, body } = req
-    fetchBody = body
+    // fetchBody = body
     const headers = { ...req.headers }
     delete headers.host
 
     const host = this.options.host
-    this.options.logger.log(`Making real request to ${host}${url}`)
+    // this.options.logger.log(`Making real request to ${host}${url}`)
 
-    if (method === "GET" || method === "HEAD") {
-      fetchBody = null
-    }
-    var fRes;
-    if (url.endsWith('favicon.ico')) {
-      console.log(`[ng-talkback] ignoring request for favicon.ico`)
-      return {
-        status: 200,
-        headers: {},
-        body: new Buffer('')
-      } as HttpResponse;
-    } else {
-      fRes = await axios({
-        url: (host + url),
+    // if (method === "GET" || method === "HEAD") {
+    //   fetchBody = null
+    // }
+    let urlToGetData = `${host}${url}`;
+    // console.log(`host: "${urlToGetData}"` )
+    // console.log(`url: "${url}"` )
+    var fRes = {
+      status: 400,
+      headers: {},
+      body: new Buffer('')
+    } as any;
+    try {
+      // console.log(body.toString())
+      const r = await axios({
+        url: urlToGetData,
         method,
+        headers,
         data: body,
         responseType: 'arraybuffer',
-      });
+      }) as any;
+      fRes = {
+        status: r.status,
+        headers: r.headers,
+        body: r.data
+      } as HttpResponse;
+    } catch (err) {
+      fRes = {
+        status: err?.response?.status,
+        headers: err?.response?.headers,
+        body: err?.response?.data
+      } as any;
     }
-    const res = {
-      status: fRes.status,
-      headers: fRes.headers,
-      body: fRes.data
-    } as HttpResponse;
-    return res;
+    return fRes;
   }
 }
