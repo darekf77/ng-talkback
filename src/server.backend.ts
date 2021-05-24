@@ -2,11 +2,9 @@ import RequestHandler from './request-handler.backend';
 import Summary from './summary.backend';
 import TapeStore from './tape-store.backend';
 
-import * as http from 'http';
-import * as https from 'https';
-import * as fs from 'fs';
-import {Options} from './options.backend';
-import {Req} from './types.backend';
+import { http, https, fse } from 'tnp-core';
+import { Options } from './options.backend';
+import { Req } from './types.backend';
 
 export default class TalkbackServer {
   private readonly options: Options
@@ -55,8 +53,8 @@ export default class TalkbackServer {
 
     const serverFactory = this.options.https.enabled ? () => {
       const httpsOpts = {
-        key: fs.readFileSync(this.options.https.keyPath!),
-        cert: fs.readFileSync(this.options.https.certPath!)
+        key: fse.readFileSync(this.options.https.keyPath!),
+        cert: fse.readFileSync(this.options.https.certPath!)
       }
       return https.createServer(httpsOpts, handleRequest)
     } : () => http.createServer(handleRequest)

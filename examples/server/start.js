@@ -84,8 +84,8 @@ var server = talkback({
   tapeDecorator: tapeDecorator,
   https: {
     enabled: true,
-    keyPath: __dirname + "/httpsCert/localhost.key",
-    certPath: __dirname + "/httpsCert/localhost.crt"
+    keyPath: crossPlatformPath(__dirname) + "/httpsCert/localhost.key",
+    certPath: crossPlatformPath(__dirname) + "/httpsCert/localhost.crt"
   }
 })
 

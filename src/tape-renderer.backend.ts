@@ -5,8 +5,8 @@ import ContentEncoding from './utils/content-encoding.backend';
 import { Options } from './options.backend';
 import { ReqRes } from './types.backend';
 import * as _ from 'lodash';
-
-const bufferShim = require('buffer-shims')
+import * as bufferShim from 'buffer-shims';
+// const bufferShim = require('buffer-shims')/
 
 export default class TapeRenderer {
   private tape: Tape

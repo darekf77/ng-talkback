@@ -27,7 +27,7 @@ const FallbackMode = talkback.Options.FallbackMode
 let talkbackServer: TalkbackServer | null, proxiedServer: http.Server | null, currentTapeId: number
 const proxiedPort = 8898
 const proxiedHost = `http://localhost:${proxiedPort}`
-const tapesPath = path.join(__dirname, "..", "/tapes")
+const tapesPath = path.join(crossPlatformPath(__dirname), "..", "/tapes")
 
 const talkbackPort = 8899
 const talkbackHost = `http://localhost:${talkbackPort}`

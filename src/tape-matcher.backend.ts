@@ -1,10 +1,9 @@
 import ContentEncoding from './utils/content-encoding.backend';
 import MediaType from './utils/media-type.backend';
-import {Options} from './options.backend';
+import { Options } from './options.backend';
 import Tape from './tape.backend';
-import {Req} from './types.backend';
-
-const isEqual = require('lodash/isEqual')
+import { Req } from './types.backend';
+import { _ } from 'tnp-core';
 
 export default class TapeMatcher {
   private readonly tape: Tape
@@ -43,7 +42,7 @@ export default class TapeMatcher {
     if (contentEncoding.isUncompressed() && mediaType.isJSON() && req.body.length > 0 && otherReq.body.length > 0) {
       const parsedReqBody = JSON.parse(req.body.toString())
       const parsedOtherReqBody = JSON.parse(otherReq.body.toString())
-      sameBody = isEqual(parsedReqBody, parsedOtherReqBody)
+      sameBody = _.isEqual(parsedReqBody, parsedOtherReqBody)
     } else {
       sameBody = req.body.equals(otherReq.body)
     }

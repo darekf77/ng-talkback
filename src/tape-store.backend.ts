@@ -1,9 +1,5 @@
-import {Options} from './options.backend';
-
-const fs = require('fs')
-const path = require('path')
-const JSON5 = require('json5')
-const mkdirp = require('mkdirp')
+import { Options } from './options.backend';
+import { fse, path, json5, mkdirp } from 'tnp-core';
 
 import Tape from './tape.backend';
 import TapeMatcher from './tape-matcher.backend';
@@ -28,15 +24,15 @@ export default class TapeStore {
   }
 
   async loadTapesAtDir(directory: string) {
-    const items = fs.readdirSync(directory) as string[]
+    const items = fse.readdirSync(directory) as string[]
     for (let i = 0; i < items.length; i++) {
       const filename = items[i]
       const fullPath = `${directory}${filename}`
-      const stat = fs.statSync(fullPath)
+      const stat = fse.statSync(fullPath)
       if (!stat.isDirectory()) {
         try {
-          const data = fs.readFileSync(fullPath, "utf8")
-          const raw = JSON5.parse(data)
+          const data = fse.readFileSync(fullPath, "utf8")
+          const raw = json5.parse(data)
           const tape = await Tape.fromStore(raw, this.options)
           tape.path = filename
           this.tapes.push(tape)
@@ -82,7 +78,7 @@ export default class TapeStore {
 
     const tapeRenderer = new TapeRenderer(tape)
     const toSave = await tapeRenderer.render()
-    fs.writeFileSync(fullFilename, JSON5.stringify(toSave, null, 4))
+    fse.writeFileSync(fullFilename, json5.stringify(toSave, null, 4))
   }
 
   currentTapeId() {

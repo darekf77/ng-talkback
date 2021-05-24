@@ -1,3 +1,5 @@
+var { fse, crossPlatformPath, path } = require('tnp-core');
+
 var talkback
 if (process.env.USE_NPM) {
   talkback = require("talkback")
@@ -13,7 +15,7 @@ const host = "https://api.github.com"
 async function start() {
   const requestHandler = await talkback.requestHandler({
     host: host,
-    path: __dirname + "/tapes",
+    path: crossPlatformPath(__dirname) + "/tapes",
     record: process.env.RECORD === "true" ? talkback.Options.RecordMode.NEW : talkback.Options.RecordMode.DISABLED,
     debug: true,
     name: "Test Request Handler",
@@ -49,7 +51,7 @@ async function start() {
     }
   })
 
-  await page.goto("file://" + __dirname + "/index.html", {waitUntil: "networkidle2"})
+  await page.goto("file://" + crossPlatformPath(__dirname) + "/index.html", {waitUntil: "networkidle2"})
   const elementContent = await page.$eval("#content", e => e.innerText)
   await browser.close()
 

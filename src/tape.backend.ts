@@ -3,9 +3,10 @@ import TapeRenderer from './tape-renderer.backend';
 import ContentEncoding from './utils/content-encoding.backend';
 import { Options } from './options.backend';
 import { Metadata, Req, Res } from './types.backend';
-
-const URL = require('url')
-const querystring = require('querystring')
+import* as URL from 'url';
+import * as querystring from 'querystring';
+// const URL = require('url')
+// const querystring = require('querystring')
 
 export class Tape {
   req: Req

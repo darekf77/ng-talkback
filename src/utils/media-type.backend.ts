@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import { _ } from 'tnp-core';
 import { ReqRes } from '../types.backend';
 import Headers from './headers.backend';
 
