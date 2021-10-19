@@ -200,7 +200,7 @@
     "morphi": "~4.0.54",
     "ng-modal-lib": "0.0.6",
     "ng-packagr": "5.7.1",
-    "ng-talkback": "~2.4.24",
+    "ng-talkback": "~2.4.25",
     "ng2-file-upload": "1.3.0",
     "ng2-logger": "~8.0.20",
     "ng2-rest": "~11.0.42",
@@ -294,5 +294,5 @@
     "ts-check": "tsc --noEmit"
   },
   "private": false,
-  "lastBuildTagHash": "607e06a88014d94959fa3d5e0deff021b3223814"
+  "lastBuildTagHash": "02908a9f79b6d818b7abc0d520f21caca7e8139c"
 }
