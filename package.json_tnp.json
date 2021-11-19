@@ -40,5 +40,6 @@
     "vcr",
     "playback"
   ],
-  "private": false
+  "private": false,
+  "workerPlugins": {}
 }
