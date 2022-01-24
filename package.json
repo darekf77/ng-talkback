@@ -295,5 +295,8 @@
     "ts-check": "tsc --noEmit"
   },
   "private": false,
-  "lastBuildTagHash": "02908a9f79b6d818b7abc0d520f21caca7e8139c"
+  "lastBuildTagHash": "02908a9f79b6d818b7abc0d520f21caca7e8139c",
+  "recreatedFrom": {
+    "tnp.json": true
+  }
 }
