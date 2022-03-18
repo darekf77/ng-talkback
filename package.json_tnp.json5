@@ -1,12 +1,8 @@
 {
   "resources": [],
-  "type": "isomorphic-lib",
-  "version": "v2",
   "overrided": {
     "linkedFolders": [],
-    "ignoreDepsPattern": [
-      "*"
-    ],
+    "ignoreDepsPattern": ['*'],
     "includeAsDev": "*",
     "includeOnly": [
       "json5",
@@ -23,6 +19,8 @@
     "obscure": false,
     "ugly": false
   },
+  "type": "isomorphic-lib",
+  "version": "v3",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
