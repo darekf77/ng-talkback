@@ -30,7 +30,7 @@
     "ts-check": "tsc --noEmit"
   },
   "private": false,
-  "lastBuildTagHash": "8d889663419be11705ef4519eb6daabd2c7c8742",
+  "lastBuildTagHash": "e500e4d60b255d4fc5dce75a73c2dbdcdf9bf948",
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular/animations": "~13.2.0",
@@ -188,7 +188,7 @@
     "moment": "2.22.2",
     "morphi": "~13.0.33",
     "ng-packagr": "13.0.0",
-    "ng-talkback": "~13.0.12",
+    "ng-talkback": "~13.0.13",
     "ng2-logger": "~13.0.14",
     "ng2-rest": "~13.0.18",
     "ng4-icons": "~13.0.14",
