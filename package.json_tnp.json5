@@ -1,5 +1,6 @@
 {
   "resources": [],
+
   "overrided": {
     "linkedFolders": [],
     "ignoreDepsPattern": ['*'],
@@ -13,14 +14,19 @@
     ],
     "dependencies": {}
   },
+
   "linkedProjects": [],
+  'linkedRepos': [],
+
   "libReleaseOptions": {
     "nodts": false,
     "obscure": false,
     "ugly": false
   },
+
   "type": "isomorphic-lib",
   "version": "v3",
+
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -28,16 +34,19 @@
     "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha -r mocha-setup.js --extensions ts,js \"test/**/*.spec.{ts,js}\"",
     "ts-check": "tsc --noEmit"
   },
+
   "description": "A node.js HTTP proxy that records and playbacks requests",
   "license": "MIT",
   "author": "Ignacio Piantanida",
   "main": "index.js",
+
   "keywords": [
     "http-proxy",
     "record",
     "vcr",
     "playback"
   ],
+
   "private": false,
-  "workerPlugins": {}
+  "workerPlugins": {},
 }
