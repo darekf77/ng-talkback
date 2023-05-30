@@ -5,6 +5,7 @@
     "linkedFolders": [],
     "ignoreDepsPattern": ['*'],
     "includeAsDev": [],
+
     "includeOnly": [
       "json5",
       "lodash",
@@ -12,7 +13,9 @@
       "uuid",
       "axios"
     ],
-    "dependencies": {}
+
+    "dependencies": {},
+    'npmFixes': [],
   },
 
   "linkedProjects": [],
