@@ -1,5 +1,5 @@
 {
-  "resources": [],
+  "resources": ['README.md'],
 
   "overrided": {
     "linkedFolders": [],
