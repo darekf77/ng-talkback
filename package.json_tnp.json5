@@ -41,9 +41,9 @@
     "ts-check": "tsc --noEmit"
   },
 
-  "description": "A node.js HTTP proxy that records and playbacks requests",
+  "description": "Fork of node.js HTTP proxy that records and playbacks requests",
   "license": "MIT",
-  "author": "Ignacio Piantanida",
+  "author": "Dariusz Filipiak",
   "main": "index.js",
 
   "keywords": [
