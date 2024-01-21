@@ -85,8 +85,11 @@ export default class TalkbackServer {
     this.closed = true
     this.server!.close(callback)
 
+    // @ts-ignore
     process.removeListener("exit", this.closeSignalHandler as any)
+    // @ts-ignore
     process.removeListener("SIGINT", this.closeSignalHandler as any)
+    // @ts-ignore
     process.removeListener("SIGTERM", this.closeSignalHandler as any)
 
     if (this.options.summary) {
