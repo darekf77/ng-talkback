@@ -79,7 +79,7 @@
     "ts-check": "tsc --noEmit"
   },
   "private": false,
-  "lastBuildTagHash": "3d1c931c5bd8237c16bdf628a89a442d3b5fff31",
+  "lastBuildTagHash": "a3dbfce6f91fd43cb195851208e0ae87030e7d5c",
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.0.5",
     "@angular-devkit/core": "~16.0.5",
@@ -268,7 +268,7 @@
     "ng-in-viewport": "15.0.2",
     "ng-lock": "16.0.1",
     "ng-packagr": "16.0.1",
-    "ng-talkback": "~16.5.8",
+    "ng-talkback": "~16.5.9",
     "ng2-logger": "~16.5.10",
     "ng2-rest": "~16.5.8",
     "ngx-ace-wrapper": "14.0.0",
