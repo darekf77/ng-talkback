@@ -1,5 +1,5 @@
 {
-  "resources": ['README.md'],
+  "resources": ["README.md"],
 
   "overrided": {
     "linkedFolders": [],
@@ -15,25 +15,25 @@
     ],
 
     "dependencies": {},
-    'npmFixes': [],
+    "npmFixes": [],
   },
 
   "linkedProjects": [],
-  'smartContainerBuildTarget': '',
-  'linkedRepos': [],
+  "smartContainerBuildTarget": "",
+  "linkedRepos": [],
 
   "libReleaseOptions": {
     "nodts": false,
     "obscure": false,
     "ugly": false,
-    'includeNodeModules': false,
-    'cliBuildNoDts': false,
-    'cliBuildObscure': false,
-    'cliBuildIncludeNodeModules': false,
-    'cliBuildUglify': false,
+    "includeNodeModules": false,
+    "cliBuildNoDts": false,
+    "cliBuildObscure": false,
+    "cliBuildIncludeNodeModules": false,
+    "cliBuildUglify": false,
   },
 
-  'smartContainerTarget': '',
+  "smartContainerTarget": "",
   "type": "isomorphic-lib",
   "version": "v4",
 
