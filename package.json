@@ -54,7 +54,7 @@
     "workerPlugins": {}
   },
   "name": "ng-talkback",
-  "version": "16.444.2",
+  "version": "16.444.3",
   "license": "MIT",
   "description": "Fork of node.js HTTP proxy that records and playbacks requests",
   "dependencies": {
