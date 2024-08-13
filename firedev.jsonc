@@ -5,17 +5,9 @@
     "linkedFolders": [],
     "ignoreDepsPattern": [],
     "includeAsDev": [],
-
-    "includeOnly": [
-      "json5",
-      "lodash",
-      "mkdirp",
-      "uuid",
-      "axios"
-    ],
-
+    "includeOnly": ["json5", "lodash", "mkdirp", "uuid", "axios"],
     "dependencies": {},
-    "npmFixes": [],
+    "npmFixes": []
   },
 
   "linkedProjects": [],
@@ -30,12 +22,12 @@
     "cliBuildNoDts": false,
     "cliBuildObscure": false,
     "cliBuildIncludeNodeModules": false,
-    "cliBuildUglify": false,
+    "cliBuildUglify": false
   },
 
   "smartContainerTarget": "",
   "type": "isomorphic-lib",
-  "version": "v16",
+  "version": "v18",
 
   "scripts": {
     "build": "node tools/build.js",
@@ -49,14 +41,7 @@
   "license": "MIT",
   "author": "Dariusz Filipiak",
   "main": "index.js",
-
-  "keywords": [
-    "http-proxy",
-    "record",
-    "vcr",
-    "playback"
-  ],
-
+  "keywords": ["http-proxy", "record", "vcr", "playback"],
   "private": false,
-  "workerPlugins": {},
+  "workerPlugins": {}
 }
