@@ -1,4 +1,4 @@
-import { _ } from 'tnp-core';
+import { _ } from 'tnp-core/src';
 import { ReqRes } from '../types.backend';
 import Headers from './headers.backend';
 

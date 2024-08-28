@@ -1,5 +1,5 @@
 import { Options } from './options.backend';
-import { fse, path, json5, mkdirp } from 'tnp-core';
+import { fse, path, json5, mkdirp } from 'tnp-core/src';
 
 import Tape from './tape.backend';
 import TapeMatcher from './tape-matcher.backend';

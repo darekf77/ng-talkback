@@ -2,7 +2,7 @@ import RequestHandler from './request-handler.backend';
 import Summary from './summary.backend';
 import TapeStore from './tape-store.backend';
 
-import { http, https, fse } from 'tnp-core';
+import { http, https, fse } from 'tnp-core/src';
 import { Options } from './options.backend';
 import { Req } from './types.backend';
 

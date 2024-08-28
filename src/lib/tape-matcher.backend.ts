@@ -3,7 +3,7 @@ import MediaType from './utils/media-type.backend';
 import { Options } from './options.backend';
 import Tape from './tape.backend';
 import { Req } from './types.backend';
-import { _ } from 'tnp-core';
+import { _ } from 'tnp-core/src';
 
 export default class TapeMatcher {
   private readonly tape: Tape
