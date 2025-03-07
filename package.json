@@ -51,7 +51,8 @@
       "playback"
     ],
     "private": false,
-    "workerPlugins": {}
+    "workerPlugins": {},
+    "packageJsonOverride": {}
   },
   "name": "ng-talkback",
   "version": "18.0.19",

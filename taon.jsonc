@@ -43,5 +43,6 @@
   "main": "index.js",
   "keywords": ["http-proxy", "record", "vcr", "playback"],
   "private": false,
-  "workerPlugins": {}
+  "workerPlugins": {},
+  "packageJsonOverride": {}
 }
