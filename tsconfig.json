@@ -1,10 +1,16 @@
 {
   "extends": "./tsconfig.isomorphic.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "strictNullChecks": false,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "paths": {
+      "ng-talkback": [
+        "./src/lib"
+      ],
+      "ng-talkback/*": [
+        "./src/lib/*"
+      ]
+    }
   },
   "include": [
     "src/**/*"
