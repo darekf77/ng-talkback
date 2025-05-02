@@ -4,10 +4,16 @@
     "strictNullChecks": false,
     "rootDir": "./src",
     "paths": {
-      "ng-talkback": [
+      "@lib": [
         "./src/lib"
       ],
-      "ng-talkback/*": [
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "ng-talkback/src": [
+        "./src/lib"
+      ],
+      "ng-talkback/src/*": [
         "./src/lib/*"
       ]
     }
