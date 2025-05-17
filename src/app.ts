@@ -1,34 +1,51 @@
-//#region @notForNpm
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+
+//#region  ng-talkback component
 //#region @browser
-import { NgModule } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+@Component({ template: 'hello world fromr ng-talkback' })
+export class NgTalkbackComponent {}
+//#endregion
+//#endregion
 
-@Component({
-selector: 'app-ng-talkback',
-template: 'hello from ng-talkback'
-})
-export class NgTalkbackComponent implements OnInit {
-constructor() { }
-
-ngOnInit() { }
-}
-
+//#region  ng-talkback module
+//#region @browser
 @NgModule({
-imports: [],
-exports: [NgTalkbackComponent],
-declarations: [NgTalkbackComponent],
-providers: [],
+  declarations: [NgTalkbackComponent],
+  imports: [CommonModule],
+  exports: [NgTalkbackComponent],
 })
-export class NgTalkbackModule { }
+export class NgTalkbackModule {}
 //#endregion
-
-//#region @backend
-async function start(port: number)  {
-
-}
-
-export default start;
-
-//#endregion
-
 //#endregion
