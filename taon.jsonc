@@ -2,6 +2,7 @@
   "type": "isomorphic-lib",
   "version": "v19",
   "dependenciesNamesForNpmLib": ["json5", "lodash", "mkdirp", "uuid", "axios"],
+  "appId": "com.domain.example.ng-talkback",
 
   "autoReleaseConfigAllowedItems": [{
     "artifactName": "npm-lib-and-cli-tool"
