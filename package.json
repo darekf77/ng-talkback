@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "19.0.40",
+  "version": "19.0.41",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -365,7 +365,7 @@
     "uuid": "~11.1.0",
     "validator": "~13.1.17",
     "video.js": "~8.3.0",
-    "vpn-split": "~18.0.20",
+    "vpn-split": "~19.0.40",
     "vscode": "1.1.37",
     "wait-on": "~8.0.3",
     "webpack": "~5.80",
