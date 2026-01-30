@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "21.0.16",
+  "version": "21.0.17",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -290,7 +290,6 @@
     "jsdom": "27.2.0",
     "json-stringify-safe": "^5.0.1",
     "json10": "~21.0.0",
-    "json10-writer": "~21.0.0",
     "json5": "~2.2.3",
     "json5-writer": "0.2.0",
     "jsonwebtoken": "~9.0.2",
