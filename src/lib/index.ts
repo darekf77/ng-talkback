@@ -1,5 +1,5 @@
 export type DummyASDASDASd = 'a';
-let a = 5534;
+let a = 23;
 a++;
 
 //#region @backend
