@@ -1,16 +1,15 @@
-export type DummyASDASDASd = 'a';
+export type DummyASDASDASd = 'asdas$asd$as';
 let a = 234343;
-a++;
 
 //#region @browser
-console.log('sdasdasd');
+console.log('asdasds');
 //#endregion
 
 //#region @backend
 export * from './options.backend';
 export * from './tape.backend';
 
-a++;
+const aa = 'ssssss';
 
 import TalkbackFactory from './talkback-factory.backend';
 import Options, {
