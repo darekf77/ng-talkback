@@ -1,26 +1,35 @@
-export type Dummy = 'a';
-let a = 2;
-a++;
+// export type DummyASDASDASd = 'asdas$asd$as';
+// let a = 234343;
+//#region @browser
+// console.log('asdasds');
+//#endregion
+//#region @backend
+// const aa = 'ssssss';
+//#endregion
+
 //#region @backend
 export * from './options.backend';
 export * from './tape.backend';
 
-
-import TalkbackFactory from './talkback-factory.backend'
-import Options, { DefaultOptions, FallbackMode, RecordMode } from './options.backend'
-
+import TalkbackFactory from './talkback-factory.backend';
+import Options, {
+  DefaultOptions,
+  FallbackMode,
+  RecordMode,
+} from './options.backend';
 
 const talkbackFn = (options: Partial<Options>) => {
-  return TalkbackFactory.server(options)
-}
+  return TalkbackFactory.server(options);
+};
 
 talkbackFn.Options = {
   Default: DefaultOptions,
   FallbackMode,
-  RecordMode
-}
+  RecordMode,
+};
 
-talkbackFn.requestHandler = (options: Partial<Options>) => TalkbackFactory.requestHandler(options)
+talkbackFn.requestHandler = (options: Partial<Options>) =>
+  TalkbackFactory.requestHandler(options);
 
 export const talkback = talkbackFn;
 export default talkbackFn;
