@@ -1,4 +1,4 @@
-// export type DummyASDASDASd = 'asdas$asd$as';
+export type DummyASDASDASd = 'asdas$asd$as';
 // let a = 234343;
 //#region @browser
 // console.log('asdasds');

@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "21.0.31",
+  "version": "21.0.32",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -185,6 +185,7 @@
     "@types/wait-on": "5.3.4",
     "@typescript-eslint/eslint-plugin": "~8.50.1",
     "@typescript-eslint/parser": "~8.50.1",
+    "@typescript/native-preview": "7.0.0-dev.20260522.1",
     "@vitest/browser-playwright": "4.0.15",
     "@vitest/coverage-v8": "4.0.15",
     "@vitest/ui": "4.0.15",
