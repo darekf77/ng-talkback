@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "21.0.33",
+  "version": "21.0.34",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -471,5 +471,9 @@
     "type": "git",
     "url": "https://github.com/darekf77/ng-talkback"
   },
-  "bin": {}
+  "bin": {
+    "ng-talkback": "bin/ng-talkback",
+    "ng-talkback-debug": "bin/ng-talkback-debug",
+    "ng-talkback-debug-brk": "bin/ng-talkback-debug-brk"
+  }
 }
