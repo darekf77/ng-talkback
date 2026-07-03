@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "21.0.35",
+  "version": "21.0.32",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -154,6 +154,7 @@
     "@tailwindcss/postcss": "~4.3.0",
     "@taon-dev/api-workers": "~21.0.0",
     "@taon-dev/cloud": "~21.0.0",
+    "@taon-dev/i18n": "~21.0.0",
     "@taon-dev/session": "~21.0.0",
     "@testdeck/jest": "~0.3.3",
     "@testdeck/mocha": "~0.3.3",
