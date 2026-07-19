@@ -1,6 +1,6 @@
 {
   "name": "ng-talkback",
-  "version": "21.0.36",
+  "version": "21.0.30",
   "scripts": {
     "build": "node tools/build.js",
     "ci": "yarn ts-check && yarn test && yarn build && USE_DIST=1 yarn test",
@@ -102,6 +102,7 @@
     "@fancyapps/ui": "~6.1.14",
     "@iconify/icons-fa-solid": "~1.2.4",
     "@iconify/icons-mdi": "~1.2.48",
+    "@imgly/background-removal-node": "~1.4.5",
     "@inquirer/prompts": "~5.3.8",
     "@ionic/pwa-elements": "^3.3.0",
     "@mdi/js": "~7.4.47",
