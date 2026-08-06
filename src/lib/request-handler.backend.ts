@@ -1,7 +1,6 @@
 import TapeStore from './tape-store.backend';
 import { v4 as uuidv4 } from 'uuid';
-
-import axios, { AxiosResponse } from 'axios';
+import { axios } from 'tnp-core/src';
 
 import Tape from './tape.backend';
 import OptionsFactory, { RecordMode, FallbackMode, Options } from './options.backend';
@@ -141,7 +140,7 @@ export default class RequestHandler {
     } as any;
     try {
       // console.log(body.toString())
-      const r = await axios({
+      const r = await axios.request({
         url: urlToGetData,
         method,
         headers,
